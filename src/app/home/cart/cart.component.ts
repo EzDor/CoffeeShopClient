@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuItem} from 'primeng/api';
-import {Constants} from '@models/constants';
 import {AdminTabs} from '@models/admin/admin-tabs.enum';
 import {AdminService} from '@services/admin.service';
+import {Constants} from '@models/constants';
 
 @Component({
-  selector: 'app-admin-page',
-  templateUrl: './admin-page.component.html',
-  styleUrls: ['./admin-page.component.css']
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css']
 })
-export class AdminPageComponent implements OnInit {
+export class CartComponent implements OnInit {
 
   public adminTabs: MenuItem[];
   public activeItem: MenuItem;
@@ -44,5 +44,6 @@ export class AdminPageComponent implements OnInit {
   public updateCurrentTab(tab: AdminTabs) {
     this.adminService.updateTab(tab);
   }
+
 
 }
