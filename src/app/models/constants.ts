@@ -125,7 +125,7 @@ export class Constants {
    ****************************/
 
   /* General */
-  public static readonly BASE_URL: string = 'http://localhost:8081';
+  public static readonly BASE_URL: string = 'http://localhost:5000';
   public static readonly API_PREFIX: string = '/api';
 
   /* Users */
@@ -135,7 +135,7 @@ export class Constants {
   public static readonly DELETE_USER_API_CALL: string = '/users/delete';
 
   /* Login */
-  public static readonly LOGIN_API_CALL: string = '/login';
+  public static readonly LOGIN_API_CALL: string = '/users/login';
 
   /* Product */
   public static readonly GET_ALL_PRODUCTS_API_CALL: string = '/product';
