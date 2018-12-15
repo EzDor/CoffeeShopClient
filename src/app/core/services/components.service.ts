@@ -30,7 +30,7 @@ export class ComponentsService {
   }
 
   public deleteComponent(componentType: string) {
-    return this.http.post(this.apiPrefix + Constants.DELETE_COMPONENTS_API_CALL, componentType);
+    return this.http.post(this.apiPrefix + Constants.DELETE_COMPONENTS_API_CALL, {type: componentType});
   }
 
 }
