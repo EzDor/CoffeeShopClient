@@ -31,7 +31,7 @@ export class UserService {
   }
 
   public deleteUser(username: string) {
-    return this.http.post(this.apiPrefix + Constants.DELETE_USER_API_CALL, username);
+    return this.http.post(this.apiPrefix + Constants.DELETE_USER_API_CALL, {username: username});
   }
 
 }
