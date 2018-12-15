@@ -15,6 +15,8 @@ export class Constants {
   public static readonly GRID_HEIGHT: number = 100;
   public static readonly NUM_OF_GRID_COL_FOR_CARD: number = 2;
   public static readonly NUM_OF_GRID_ROWS_FOR_CARD: number = 4;
+  public static readonly TOKEN_PREFIX: string = 'Bearer ';
+
 
   /****************************
    * Admin Page
