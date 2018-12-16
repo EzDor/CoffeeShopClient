@@ -37,7 +37,7 @@ export class ProductService {
   }
 
   public deleteProduct(productType: string) {
-    return this.http.post(this.apiPrefix + Constants.DELETE_PRODUCT_API_CALL, productType);
+    return this.http.post(this.apiPrefix + Constants.DELETE_PRODUCT_API_CALL, {type: productType});
   }
 
 

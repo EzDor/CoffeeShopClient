@@ -145,8 +145,8 @@ export class AdminService {
   }
 
   private mapProductComponentToProductType(products: Product[]) {
-    products.map(product => {
-      product.componentsTypes = product.productComponents.map(component => component.type);
+    products.forEach(product => {
+      product.componentsTypes = product.productComponents.map(component => component.productComponents.type);
     });
   }
 

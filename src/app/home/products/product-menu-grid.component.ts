@@ -31,6 +31,11 @@ export class ProductMenuGridComponent implements OnInit {
     this.productService.getActiveProducts()
       .subscribe(
         (products: Product[]) => {
+          products.forEach(
+            (prod) => {
+              prod.productComponents = prod.productComponents.map(comp => comp.productComponents);
+            }
+          );
           this.products = products;
         }
       );
