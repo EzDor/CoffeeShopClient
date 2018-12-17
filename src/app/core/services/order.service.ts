@@ -34,7 +34,7 @@ export class OrderService {
   }
 
   public deleteItemFromCart(orderItemId: number): Observable<any> {
-    return this.http.post(this.apiPrefix + Constants.DELETE_ITEM_FROM_CART_API_CALL, orderItemId);
+    return this.http.post(this.apiPrefix + Constants.DELETE_ITEM_FROM_CART_API_CALL, {id: orderItemId});
   }
 
   public checkout(creditCard: CreditCard): Observable<any> {

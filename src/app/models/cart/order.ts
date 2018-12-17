@@ -11,4 +11,5 @@ export interface Order {
   price?: number;
   displayDate?: string;
   orderItemProducts?: string[];
+  orderToOrderItems?: any[];
 }
