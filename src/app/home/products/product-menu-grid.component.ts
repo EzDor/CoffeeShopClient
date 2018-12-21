@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Constants} from '@models/constants';
 import {ProductService} from '@services/product.service';
 import {Product} from '@models/product/product';
+import {Component as Comp} from '@models/component/component';
 import {NewOrderDialogFormComponent} from '@dialogs/new-order-dialog-form/new-order-dialog-form.component';
 import {DialogService} from '@services/dialog.service';
 
@@ -33,12 +34,16 @@ export class ProductMenuGridComponent implements OnInit {
         (products: Product[]) => {
           products.forEach(
             (prod) => {
-              prod.productComponents = prod.productComponents.map(comp => comp.productComponents);
+              prod.productComponents = this.getComponents(prod);
             }
           );
           this.products = products;
         }
       );
+  }
+
+  private getComponents(prod): Comp[] {
+    return prod.productComponents.map(comp => comp.productComponents);
   }
 
   private beLazy() {

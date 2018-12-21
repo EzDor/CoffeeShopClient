@@ -8,7 +8,7 @@ export interface Product {
   description: string;
   price: number;
   componentsTypes?: string[];
-  productComponents?: Component[] | any[];
+  productComponents?: any[];
   status: ProductStatus;
   image: string;
 

@@ -12,6 +12,7 @@ import {OrderItem} from '@models/cart/order-item';
 import {OrderItemDisplayKeys} from '@models/cart/order-item-display-keys';
 import {OrderDisplayKeys} from '@models/cart/order-display-keys';
 import {DatePipe} from '@angular/common';
+import {Component} from '@models/component/component';
 
 @Injectable({providedIn: CoreModule})
 export class CartService {
@@ -135,7 +136,7 @@ export class CartService {
     this.orderService.getArchiveOrders()
       .subscribe(
         (orders: Order[]) => {
-          orders.map( order => order.orderItems = this.mapDotNetOrderItems(order));
+          orders.map(order => order.orderItems = this.mapDotNetOrderItems(order));
           this.mapOrders(orders);
           orders.sort((x, y) => {
             return new Date(x.updateTime).getDate() - new Date(y.updateTime).getDate();
@@ -187,8 +188,12 @@ export class CartService {
         orderItem.components = o.OrderItems.orderItemToComponents.map(component => component.Components);
         orderItem.id = o.OrderItems.id;
         orderItem.price = o.OrderItems.price;
-        orderItem.product.productComponents = orderItem.product.productComponents.map(component => component.productComponents);
+        orderItem.product.productComponents = this.getOrderItemComponents(orderItem);
         return orderItem;
       });
+  }
+
+  private getOrderItemComponents(orderItem): Component[] {
+    return orderItem.product.productComponents.map(component => component.productComponents);
   }
 }
